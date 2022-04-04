@@ -1,6 +1,6 @@
 # README
 
-Intigrattion of Eclispse Api.
+Intigration of Eclispse Api.
 
 Creation Customer and issue a virtual card.
 There are 5 Api calls with Service oriented architecture.
