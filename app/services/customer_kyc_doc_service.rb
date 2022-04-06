@@ -18,7 +18,7 @@ class CustomerKycDocService < ApplicationService
 
         response = HTTParty.post("https://eclipse-java-sandbox.ukheshe.rocks/eclipse-conductor/rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/documents",
                                     body: options.to_json,
-                                    headers: {'Content-Type' => '`application`/json',
+                                    headers: {'Content-Type' => 'application/json',
                                               'Authorization' => joken}
                                   )                  
         pp response
