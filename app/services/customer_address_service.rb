@@ -5,7 +5,6 @@ class CustomerAddressService < ApplicationService
       def initialize(params)
         @params = params
       end
-    
 
       def call
         puts "<Add Customer Address Service>"
