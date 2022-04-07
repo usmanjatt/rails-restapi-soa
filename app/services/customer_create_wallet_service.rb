@@ -21,7 +21,7 @@ class CustomerCreateWalletService < ApplicationService
                     :currency => @params[:currency]
                   }
 
-        response = HTTParty.post("https://eclipse-java-sandbox.ukheshe.rocks/eclipse-conductor/rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/wallets",
+        response = HTTParty.post("#{ENV['baseUrl']}rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/wallets",
                                     body: options.to_json,
                                     headers: {'Content-Type' => 'application/json',
                                               'Authorization' => joken}

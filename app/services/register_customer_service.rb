@@ -27,7 +27,7 @@ class RegisterCustomerService < ApplicationService
                     :title => @params[:title]
                   }
 
-        response = HTTParty.post("https://eclipse-java-sandbox.ukheshe.rocks/eclipse-conductor/rest/v1/tenants/#{params['tenantId']}/customers",
+        response = HTTParty.post("#{ENV['baseUrl']}rest/v1/tenants/#{params['tenantId']}/customers",
                                     body: options.to_json,
                                     headers: {'Content-Type' => 'application/json',
                                               'Authorization' => joken}

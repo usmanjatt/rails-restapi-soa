@@ -16,7 +16,7 @@ class CustomerKycDocService < ApplicationService
                     :base64EncodedDocument => @params[:base64EncodedDocument]
                   }
 
-        response = HTTParty.post("https://eclipse-java-sandbox.ukheshe.rocks/eclipse-conductor/rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/documents",
+        response = HTTParty.post("#{ENV['baseUrl']}rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/documents",
                                     body: options.to_json,
                                     headers: {'Content-Type' => 'application/json',
                                               'Authorization' => joken}

@@ -17,7 +17,7 @@ class CustomerKickoffRatifyService < ApplicationService
 
                   }
 
-        response = HTTParty.post("https://eclipse-java-sandbox.ukheshe.rocks/eclipse-conductor/rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/ratify",
+        response = HTTParty.post("#{ENV['baseUrl']}rest/v1/tenants/#{params['tenantId']}/customers/#{params['consumerCustomerId']}/ratify",
                                     body: options.to_json,
                                     headers: {'Content-Type' => 'application/json',
                                               'Authorization' => joken}
