@@ -7,7 +7,7 @@ class CustomerKycDocService < ApplicationService
       end
     
       def call
-        puts "<Add Customer KYC Doc Info Service>"
+        puts "<Add Customer KYC Doc Info Service AND Selfie>"
         
         joken = "Bearer " + params['token']
 

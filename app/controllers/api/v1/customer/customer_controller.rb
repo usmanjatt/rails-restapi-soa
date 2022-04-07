@@ -17,7 +17,13 @@ class Api::V1::Customer::CustomerController < ApplicationController
 
             when params['service_name'] == "Create_Wallet"
                 response = CustomerCreateWalletService.call(params)
-        
+            
+            when params['service_name'] == "Add_Facial_Photo"   #used for uploading selfie using same service kyc doc info attachment
+                response = CustomerKycDocService.call(params)
+            
+            when params['service_name'] == "Add_Wallet_Topup"
+                response = CustomerWalletTopupService.call(params)
+
             else
                 response = "service name not valid"
         end
