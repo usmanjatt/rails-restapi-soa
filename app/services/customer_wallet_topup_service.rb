@@ -29,8 +29,6 @@ class CustomerWalletTopupService < ApplicationService
                     :type => @params[:type]
                   }
 
-          pp options
-
         response = HTTParty.post("#{ENV['baseUrl']}rest/v1/tenants/#{params['tenantId']}/wallets/#{params['consumerWalletId']}/topups",
                                     body: options.to_json,
                                     headers: {'Content-Type' => 'application/json',
